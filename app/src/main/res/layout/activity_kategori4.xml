@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_kategori4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--di bawah ini merupakan komponen widget RecyclerView untuk menampilkan row dari kategori4
+     - id untuk komponen ini adalah rv_kategori4
+     - lebar dan tinggi dari komponen ini disesuaikan dengan lebar dan tinggi dari halaman
+     - kemudian terdapat elemen list item yang digunakan untuk menampilkan list dari layout item_row_kategori4 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_kategori4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_row_kategori4" />
+</RelativeLayout>

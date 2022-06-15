@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#072227"
+    tools:context=".MainActivity">
+
+    <!--
+    1. komponen yang pertama adalah komponen linearLayout dengan id Linearlayout2
+    2. lebar dari linearLayout disesuaikan dengan lebar layar, sedangkan tingginya disesuaikan dengan konten atau objek yang mengisi di dalamnya
+    3. orientasi yang diberikan adalah vertikal
+    4. padding untuk linear layout ini sebesar 20dp
+    5. di dalam komponen linearlayout terdapat komponen imageview yang menampilkan ikon profile, berada disebelah kanan atas dengan lebar dan tingginya adalah
+        sebesar 35dp
+    -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/profile"
+            android:layout_gravity="right"/>
+        <!--komponen berikut terdapat di dalam layout Linearlayout2
+         1. lebar dan tinggi dari komponen widget constraintLayout ini adlah sebesar 250dp dan 70dp
+         2. kemudian untuk gravitynya diatur ke tengah/ center
+         3. background menggunakan elemen dari drawable bernama rectangle_corner2
+         4. di dalam komponen widget constraintLayout terdapat elemen TextView dengan id textsaran.
+            textview ini berguna untuk menampilkan teks kontak dan saran. Size dari teks adalah sebesar 16db dan stylenya bold
+            lebar dan tinggi dari teks diatur menyesuaikan dengan objek -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/saran"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rectangle_corner2">
+            <TextView
+                android:id="@+id/textSaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kotak Saran dan Masukan"
+                android:textColor="@color/purple_700"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <!-- komponen berikut adalah komponen linearLayout dengan id linearlayout3
+    dengan lebar dan tinggi yang disesuaikan dengan ukuran layar, komponen ini diberikan orientasi vertikal
+    di dalam komponen linearlayout, terdapat elemen RelativeLayout, yang mempunyai lebar dan tinggi yang disesuaikan dengan ukuran layar
+    juga terdapat padding sebesar 10dp
+    - selanjutnya, di dalam Relativelayout terdapat elemen textView dengan id TextViewMuqoddimah
+      lebar dari textview ini disesuaikan dengan size layar, sedangkan tingginya disesuaikan dengan objek yang mengisi di dalamnya.
+      teks yang dituliskan adalah teks "Muqoddimah" dengan size 20dp dan style bold
+      TextView ini diposisikan disebelah kiri menggunakan layout_gravity="left"
+      kemudian juga diberikan margin top sebesar 10dp
+      -->
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="165dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        android:background="@drawable/rectangle_corner">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/textViewMuqoddimah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Muqoddimah"
+                android:textColor="#35858B"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <!-- komponen cardview di bawah ini diberi id cardmuqoddimah
+            lebarnya disesuaikan dengan ukuran lebar layar, sedangkan tingginya adalah 140dp
+            letak dari cardview ini berada di bawah textViewMuqoddimah
+            margin start dan margin top diberikan sebesar 10dp, sedangkan margin bottom diberikan sebesar 8dp.
+
+             di dalam cardview ini terdapat elemen imageview yang digunakan untuk menampilkan elemen drawable bernama muqoddimah
+             lebar dan tinggi dari imageView disesuaikan dengan size dari layar
+             untuk scaleType nya adalah centerCrop-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardmuqoddimah"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_below="@+id/textViewMuqoddimah"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:elevation="0dp"
+                android:focusable="true"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMuqoddimah">
+                <ImageView
+                    android:id="@+id/imgMuqoddimah"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/muqoddimah" />
+            </androidx.cardview.widget.CardView>
+            <!-- selanjutnya adalah elemen TextView dengan id textView3
+             lebar disesuaikan dengan size layar, sedangkan tingginya disesuaikan dengan size dari objek yang mengisi di dalamnya
+             gravity dari textView ini adalah di sebelah kiri, kemudian margin left dan margin top diberikan sebesar 10dp
+             text yang ditampilkan adalah text "Kategori". Mempunyai size sebesar 20dp dan style bold
+             letak dari textView3 berada di bawah cardmuqoddimah -->
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Kategori"
+                android:textColor="#35858B"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/cardmuqoddimah"/>
+            <!-- komponen selanjutnya adalah komponen linearLayout4, lebarnya diatur sesuai size layar, sedangkan tingginya disesuaikan dengan size objek yang mengisi di dalamnya
+            margin top yang diberikan adalah sebesar 10dp, gravitynya center_horizontal, dan tata letaknya berada di bawah textView3
+
+            di dalam komponen linearLayout terdapat elemen cardiew dengan id kategori1 dan kategori2 yang digunakan untuk mengatur layout berupa cardview
+            berisi gambar icon untuk cardview tersebut. lebar dan tinggi dari cardview adalah sebesar 140dp dan juga diberikan margin sebesar 10dp
+            - untuk dapat menampilkan gambarnya menggunakan elemen imageView yang lebar dan tingginya di atur sesuai dengan size layar
+              scale typenya diberikan fit center. Dan untuk gambar yang masukkan adalah gb1 dan gb2 yang sudah diupload di drawable
+
+            - di bawah dari imageview terdapat elemen textview yang digunakan untuk memberikan keterangan dari imageview di atasnya
+              lebar dan tingginya disesuaikan dengan size dari objek yang mengisi di dalamnya. Diberikan gravity center_horizontal. Text Size nya adalah sebesar 14db
+              stylenya adalah bold dan type dari fontnya adalah sans.
+            -->
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_below="@id/textView3">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori1"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:focusable="true"
+                    android:background="#072227"
+                    app:cardCornerRadius="10dp">
+                    <ImageView
+                        android:id="@+id/imgKategori1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/gb1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doa Pengamalan Rutin"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="bottom"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:typeface="sans"
+                        android:textColor="@color/black"/>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori2"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="30dp"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:focusable="true"
+                    android:background="#35858B"
+                    app:cardCornerRadius="10dp">
+                    <ImageView
+                        android:id="@+id/imgKategori2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/gb2" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doa-doa sholat sunnah"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="bottom"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:typeface="sans"
+                        android:textColor="@color/black"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <!-- komponen selanjutnya adalah komponen linearLayout5, lebarnya diatur sesuai size layar, sedangkan tingginya disesuaikan dengan size objek yang mengisi di dalamnya
+            margin top yang diberikan adalah sebesar 10dp, gravitynya center_horizontal, dan tata letaknya berada di bawah textView3
+
+            di dalam komponen linearLayout terdapat elemen cardiew dengan id kategori1 dan kategori2 yang digunakan untuk mengatur layout berupa cardview
+            berisi gambar icon untuk cardview tersebut. lebar dan tinggi dari cardview adalah sebesar 140dp dan juga diberikan margin sebesar 10dp
+            - untuk dapat menampilkan gambarnya menggunakan elemen imageView yang lebar dan tingginya di atur sesuai dengan size layar
+              scale typenya diberikan fit center. Dan untuk gambar yang masukkan adalah gb3 dan gb4 yang sudah diupload di drawable
+
+            - di bawah dari imageview terdapat elemen textview yang digunakan untuk memberikan keterangan dari imageview di atasnya
+              lebar dan tingginya disesuaikan dengan size dari objek yang mengisi di dalamnya. Diberikan gravity center_horizontal. Text Size nya adalah sebesar 14db
+              stylenya adalah bold dan type dari fontnya adalah sans.
+            -->
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_below="@id/linearLayout4">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori3"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:focusable="true"
+                    android:background="#072227"
+                    app:cardCornerRadius="10dp">
+                    <ImageView
+                        android:id="@+id/imgKategori3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/gb3" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doa-doa bulan Ramadhan"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="bottom"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:typeface="sans"
+                        android:textColor="@color/black"/>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori4"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="30dp"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:focusable="true"
+                    android:background="#35858B"
+                    app:cardCornerRadius="10dp">
+                    <ImageView
+                        android:id="@+id/imgKategori4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/gb4" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doa-doa perlindungan"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="bottom"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:typeface="sans"
+                        android:textColor="@color/black"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MuqoddimahActivity">
+
+    <!-- komponen yang pertama adalah komponen RelativeLayout dengan id relative
+    lebar dari komponen ini di atur sebesar/ sesuai dengan size layar, sedangkan tingginya diberikan sebesar 70dp
+    background yang digunakan adalah background berupa elemen rectangle_top yang sudah dibuat di drawable
+    orientasi yang diberikan adalah horizontal -->
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/rectangle_top"
+        android:orientation="horizontal">
+
+        <!-- textview di bawah ini menampilkan judul berupa teks "Muqoddimah" yang diberikan lebar dan tinggi sebesar dan sesuai dengan objek yang mengisi di dalamnya
+        layout gravity yang diberikan adalah center_vertical
+        margin end diatur sebesar 130dp, sedangkan marginTop diberikan sebesar 15dp
+        textColor diatur ke warna putih, size text sebesar 20sp dan style textnya adlah bold-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="130dp"
+            android:text="Muqoddimah"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!--textview berikutnya adalah digunakan untuk menampilkan teks sebanyak 2 paragraf
+     ukuran lebar dan tinggi disesuaikan dengan size dari objek yang berada di bawahnya
+     gravity yang digunakan adlah center_horizontal, layout_margin diberikan sebesar 20dp,
+     marginTop sebesar 30 dp dan padding topnya sebesar 30dp. Untuk text diberikan rata kanan kiri
+     letter spacinya sebesar 0.04. Ukuran teks sebesar 15dp, style bold dan typenya adalah sans.
+     letak dari textview ini berada di bawah layout relative. -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assalamualaikum Wr.Wb \n\n Alhamdulillahi rabbil 'alamin, Puji syukur kami panjatkan untuk Allah SWT yang mana telah memberi kesempatan kepada kami untuk dapat membuat aplikasi ini. Seiring dengan perkembangan zaman yang semakin modern, segala sarana kini menjadi mudah. Dengan aplikasi ini, kami berharap Aplikasi ini dapat memberikan kesempatan kepada para pengguna untuk lebih mudah dalam mendekatkan diri kepada Allah SWT. \n\n Semua Doa yang ada di dalam aplikasi ini kami ambil berdasarkan Al Qur'an dan Al Hadist, sehingga doa-doa yang kami tulis bukanlah doa-doa yang asal-asalan. Jika terdapat perbedaan lafal doa seperti yang sudah anda hafal, hal itu wajar saja. Karena Nabi Muhammad SAW mengajarkan banyak Doa, 'Agama itu Mudah', tidak usah diperselisihkan kenapa berbeda dengan yang sudah anda hafal. Yang kami tulis disini adalah apa yang kami temui dalam Al Qur'an dan Al Hadist, dan kami telah menulis rujukannya sehingga dapat dipertanggung jawabkan. \n\n Alhamdulillahi Jaza Kumullohu Khoiro"
+        android:gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        android:paddingTop="30dp"
+        android:justificationMode="inter_word"
+        android:letterSpacing="0.04"
+        android:layout_below="@id/relative"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans"/>
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Kumpulan_doa</string>
+    <string name="kategori_name">Judul Doa</string>
+    <string name="detail">Detail</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="with_cardview">CardView</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+</resources>

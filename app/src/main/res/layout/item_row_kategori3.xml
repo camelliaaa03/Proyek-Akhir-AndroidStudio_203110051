@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <!-- komponen berikut merupakan komponen CircleImageView yang digunakan untuk menampilkan gambar berbentuk lingkaran
+    lebar dan tinggi untuk komponen ini adalah 55dp, dan juga diberikan margin end sebesar 16dp
+    untuk id dari CircleImageView adalah img_item_photo-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_item_photo"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="16dp"
+        tools:src="@tools:sample/avatars" />
+
+    <!-- kemudian selanjutnya adalah komponen linearLayout yang diberikan size lebar match_parent, sedangkan untuk tingginya adalah wrap_content
+    orientasi untuk linearlayout ini adalah vertical
+
+    - di dalam linear layout terdapat 2 elemen textView yaitu tv_item_name dan tv_item_detail
+    ukuran lebar disesuaikan dengan size layar dan sedangkan tingginya disesuaikan dengan besarnya ukuran objek yang berada di dalamnya
+    textsize untuk tv_item_name adalah sebesar 16db dengan style bold, sedangkan untuk tv_item_detail diberikan maxline 2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="@string/kategori_name" />
+        <TextView
+            android:id="@+id/tv_item_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="@string/detail" />
+    </LinearLayout>
+</LinearLayout>
